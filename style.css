@@ -1,0 +1,25 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.outer-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: wrap;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.square {
+  flex: 1 0 auto;
+  aspect-ratio: 1 / 1; /* This ensures squares are always squares */
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
