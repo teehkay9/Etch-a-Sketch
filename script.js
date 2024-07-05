@@ -1,3 +1,11 @@
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  let squaresPerSide = prompt("How many squares per side?");
+
+  alert(`${squaresPerSide}`);
+});
+
 const outerContainer = document.querySelector(".outer-container");
 
 for (let i = 0; i < 16; i++) {
