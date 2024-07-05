@@ -8,6 +8,11 @@ for (let i = 0; i < 16; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
     row.appendChild(square);
+
+    // add event listener for hover effect
+    square.addEventListener("mouseover", () => {
+      square.style.backgroundColor = "grey";
+    });
   }
   outerContainer.appendChild(row);
 }

@@ -23,3 +23,7 @@ html {
   border: 1px solid #ddd;
   box-sizing: border-box;
 }
+
+.hover {
+  background-color: grey;
+}
