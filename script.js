@@ -1,13 +1,10 @@
 const button = document.querySelector("button");
 
-button.addEventListener("click", () => {
-  let squaresPerSide = prompt("How many squares per side?");
-
-  alert(`${squaresPerSide}`);
-});
+button.addEventListener("click", createSketchpad);
 
 const outerContainer = document.querySelector(".outer-container");
 
+// create initial 16x16 grid
 for (let i = 0; i < 16; i++) {
   const row = document.createElement("div");
   row.classList.add("row");
@@ -23,4 +20,33 @@ for (let i = 0; i < 16; i++) {
     });
   }
   outerContainer.appendChild(row);
+}
+
+function createSketchpad() {
+  numOfRows = prompt("How many squares per side?");
+  // delete the current grid
+  const outerContainer = document.querySelector(".outer-container");
+  const rows = document.querySelectorAll(".row");
+
+  rows.forEach((row) => {
+    outerContainer.removeChild(row);
+  });
+
+  // create a new grid
+  for (let i = 0; i < numOfRows; i++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let j = 0; j < numOfRows; j++) {
+      const square = document.createElement("div");
+      square.classList.add("square");
+      row.appendChild(square);
+
+      // add event listener for hover effect
+      square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "grey";
+      });
+    }
+    outerContainer.appendChild(row);
+  }
 }
