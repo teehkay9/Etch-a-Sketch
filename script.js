@@ -1,8 +1,6 @@
-const button = document.querySelector("button");
-
-button.addEventListener("click", createSketchpad);
-
 const outerContainer = document.querySelector(".outer-container");
+const button = document.querySelector("button");
+button.addEventListener("click", createSketchpad);
 
 // create initial 16x16 grid
 for (let i = 0; i < 16; i++) {
@@ -23,7 +21,14 @@ for (let i = 0; i < 16; i++) {
 }
 
 function createSketchpad() {
-  numOfRows = prompt("How many squares per side?");
+  let numOfRows = prompt("How many squares per side?");
+  numOfRows = parseInt(numOfRows);
+
+  if (isNaN(numOfRows) || numOfRows < 0 || numOfRows > 64) {
+    alert("Please enter a valid number between 0 and 64.");
+    return;
+  }
+
   // delete the current grid
   const outerContainer = document.querySelector(".outer-container");
   const rows = document.querySelectorAll(".row");
